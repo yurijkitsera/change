@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
     <title>Зміна статусу кредитної заявки</title>
 
@@ -17,49 +16,21 @@
         <div class="modal-header">
             <h1 class="modal-title" id="myModalLabel">Статус кредитної заявки</h1>
             <span class="loader hidden" id="loader"></span>
-
         </div>
         <label for="ref">Референс ОТС</label>
-        <input type="text" name="ref" id="ref" placeholder="ref" required />
+        <input type="text" name="ref" id="ref" placeholder="ref" />
         <label></label>
 
         <button type="submit" id="btn-send2">Змінити</button>
     </div>
 
 
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#btn-send2').click(function () {
-                var ref = $('#ref').val();
-                if (ref !== '') {
-                    $('span').removeClass('hidden')
-                }
-                if (ref !== '') {
-                    $.ajax({
-                        type: "POST", //метод передачи данных
-                        url: 'https://0-570-0.app.nr.it.loc/change',
-                        data: {
-                            ref: ref,
-                        }, //передаваемые данные
-                        success: function (data) { //получение результата
-                            $("span").addClass("hidden");
-                            var old = $('.modal-header').html(); //получаем содежимое div
-                            $('.modal-header').html(old +
-                                data.status); //добавляем сообщение об отправке
-                        }
-                    });
-                }
+    <script src="js/main.js"></script>
 
-            });
-        });
-    </script>
 </body>
 
 </html>
