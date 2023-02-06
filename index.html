@@ -37,8 +37,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#btn-send2').click(function () {
-                $('span').removeClass('hidden')
                 var ref = $('#ref').val();
+                if (ref !== '') {
+                    $('span').removeClass('hidden')
+                }
                 if (ref !== '') {
                     $.ajax({
                         type: "POST", //метод передачи данных
