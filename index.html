@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Зміна статусу кредитної заявки</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск заявки</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Форма -->
-    <div class="form">
-
-        <div class="modal-header">
-            <h1 class="modal-title" id="myModalLabel">Статус кредитної заявки</h1>
-            <span class="loader hidden" id="loader"></span>
-        </div>
-        <label for="ref">Референс ОТС</label>
-        <input type="text" name="ref" id="ref" placeholder="ref" />
-        <label></label>
-
-        <button type="submit" id="btn-send2">Змінити</button>
+    <div id="screen1">
+        <h1>Пошук заявки</h1>
+        <input type="text" id="searchInput" placeholder="Введіть номер заявки">
+        <button id="searchBtn">Пошук</button>
+        <div id="loader" class="hidden"></div>
     </div>
 
+    <div id="screen2" class="hidden">
+        <h1>Деталі заявки</h1>
+        <div id="result"></div>
+        <label for="statusSelect">Змінити статус заявки на:</label>
+        <select id="statusSelect">
+            <option value="pending">В ожидании</option>
+            <option value="approved">Одобрено</option>
+            <option value="rejected">Отклонено</option>
+        </select>
+        <button id="updateStatusBtn">Змінити статус</button>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-    </script>
+    <div id="successScreen" class="hidden">
+        <h1>Статус успешні змінено</h1>
+        <button id="backToSearchBtn">Повернутись до пошуку</button>
+    </div>
+
     <script src="js/main.js"></script>
-
 </body>
-
 </html>
